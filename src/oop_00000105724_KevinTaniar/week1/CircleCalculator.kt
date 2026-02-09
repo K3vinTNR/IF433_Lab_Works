@@ -1,15 +1,10 @@
 package oop_00000105724_KevinTaniar.week1
 
 fun main(args: Array<String>) {
-    // Variable definition
     val radius = 7.0
     val pi = 3.14
-    // Calculation
     val area = pi * radius * radius
-    // Output Concatenation
     println("Radius: $radius, Area: $area")
-
-    // Logic check
     println(checkSize(area))
 }
 fun checkSize(area: Double) =
