@@ -1,7 +1,6 @@
 package oop_00000105724_KevinTaniar_week2
 
 import java.util.Scanner
-
 fun main (){
     val scanner = Scanner(System.`in`)
     println("----Aplikasi PMB UMN----");
