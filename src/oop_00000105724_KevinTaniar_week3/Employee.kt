@@ -1,16 +1,23 @@
 package oop_00000105724_KevinTaniar_week3
 
-class Employee (val name: String) {
+class Employee(val name: String) {
+    // Properti dengan Custom Setter dan Backing Field
     var salary: Int = 0
-        set (value) {
+        set(value) {
             if (value < 0) {
                 println("ERROR: Gaji tidak boleh negatif! Di-set ke 0.")
-                field = 0 // Gunakan field, bukan this.salary
+                field = 0
             } else {
-                field = value // Gunakan field untuk assign nilai asli
+                field = value
             }
         }
+
+    // Properti Private (Encapsulation)
     private var performanceRating: Int = 3
+
+    // Computed Property (Custom Getter)
+    val tax: Double
+        get() = salary * 0.1
 
     fun increasePerformance() {
         performanceRating++
@@ -18,8 +25,6 @@ class Employee (val name: String) {
     }
 
     fun printStatus() {
-        println("Karyawan: $name, Rating: $performanceRating")
+        println("Karyawan: $name, Gaji: $salary, Rating: $performanceRating, Pajak: $tax")
     }
-    val tax: Double
-        get() = salary * 0.1
 }

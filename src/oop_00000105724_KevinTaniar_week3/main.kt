@@ -4,14 +4,16 @@ fun main() {
     val e = Employee("Budi")
 
     // 1. Test Validasi Salary
-    e.salary = -1000 // Harusnya print Error
+    println("--- Test Salary Validation ---")
+    e.salary = -1000 // Akan mencetak error dan set ke 0
     e.salary = 5000000
-    println("Gaji: ${e.salary}")
 
-    // 2. Test Encapsulation
+    // 2. Test Encapsulation & Performance
+    println("\n--- Test Performance ---")
     e.increasePerformance()
-    // e.performanceRating = 5 // Coba uncomment, pasti Merah (Error)
 
-    // 3. Test Computed Property
+    // 3. Test Output Akhir
+    println("\n--- Final Status ---")
+    e.printStatus()
     println("Pajak yang harus dibayar: ${e.tax}")
 }
