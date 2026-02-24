@@ -24,4 +24,13 @@ fun main() {
 
     println(weapon.damage)
     println(weapon.tier)
+    val player = Player("Kevin")
+
+// player.xp   // harus error
+
+    player.addXp(50)
+    println(player.level)
+
+    player.addXp(60)
+    println(player.level)
 }
