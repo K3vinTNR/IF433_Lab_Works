@@ -8,13 +8,24 @@ fun main() {
 
     println("\n--- Testing Car ---")
     val myCar = Car(brand = "Toyota", numberOfDoors = 4)
-    myCar.openTrunk() // Memanggil method milik sendiri
-    myCar.honk() // Memanggil method yang sudah di-override
-    myCar.accelerate() // Memanggil gabungan method Parent dan Child
+    myCar.openTrunk()
+    myCar.honk()
+    myCar.accelerate()
 
     println("\n--- Testing ElectricCar ---")
     val myTesla = ElectricCar(brand = "Tesla", numberOfDoors = 4, batteryCapacity = 85)
-    myTesla.accelerate()  // Method yang sudah final
-    myTesla.honk()        // Mewarisi dari Car
-    myTesla.openTrunk()   // Mewarisi dari Car
+    myTesla.accelerate()
+    myTesla.honk()
+    myTesla.openTrunk()
+
+    // === TAMBAHKAN KODE EMPLOYEE HIERARCHY DI BAWAH INI ===
+    println("\n--- Testing Employee Hierarchy ---")
+
+    val manager = Manager(name = "Budi", baseSalary = 10000000)
+    manager.work()
+    println("Bonus ${manager.name}: Rp ${manager.calculateBonus()}")
+
+    val developer = Developer(name = "Ani", baseSalary = 8000000, programmingLanguage = "Kotlin")
+    developer.work()
+    println("Bonus ${developer.name}: Rp ${developer.calculateBonus()}")
 }
