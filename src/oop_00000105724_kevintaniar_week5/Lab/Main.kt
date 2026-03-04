@@ -42,5 +42,11 @@ fun main() {
     for (pay in listPayment) {
         println("Metode: ${pay.accountName}")
         pay.processPayment(75000.0)
+        if (pay is EWallet) {
+            println("=> Saldo kurang, mencoba top up otomatis...")
+            pay.topUp(50000.0) // Panggil topUp secara otomatis [cite: 228]
+            pay.processPayment(75000.0) // Coba bayar lagi, seharusnya berhasil [cite: 229]
+        }
+        println("--------------------")
     }
 }
