@@ -25,4 +25,12 @@ fun main() {
         }
         println()
     }
+    println("=== TESTING MATHHELPER (OVERLOADING) ===")
+    val math = MathHelper()
+    // Memanggil metode yang tepat berdasarkan argumen (sisi: Int) [cite: 193, 199]
+    println("Luas Persegi (sisi 5): ${math.hitungLuas(5)}")
+    // Memanggil metode (panjang: Int, lebar: Int) [cite: 194, 199]
+    println("Luas Persegi Panjang (10x5): ${math.hitungLuas(10, 5)}")
+    // Memanggil metode (jariJari: Double) [cite: 195, 199]
+    println("Luas Lingkaran (r 7.0): ${math.hitungLuas(7.0)}")
 }
