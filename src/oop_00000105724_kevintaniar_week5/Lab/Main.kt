@@ -33,4 +33,14 @@ fun main() {
     println("Luas Persegi Panjang (10x5): ${math.hitungLuas(10, 5)}")
     // Memanggil metode (jariJari: Double) [cite: 195, 199]
     println("Luas Lingkaran (r 7.0): ${math.hitungLuas(7.0)}")
+    println("\n=== TESTING PAYMENT SYSTEM ===")
+    val myEWallet = EWallet("JohnThor Wallet", 50000.0)
+    val myCreditCard = CreditCard("JohnThor Visa", 100000.0)
+
+    val listPayment: List<PaymentMethod> = listOf(myEWallet, myCreditCard)
+
+    for (pay in listPayment) {
+        println("Metode: ${pay.accountName}")
+        pay.processPayment(75000.0)
+    }
 }
