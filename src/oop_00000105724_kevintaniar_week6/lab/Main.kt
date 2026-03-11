@@ -25,4 +25,6 @@ fun main() {
     hub.addDevice(lamp)
     hub.addDevice(speaker)
     hub.addDevice(cctv)
+    hub.activateSecurityMode()
+    hub.turnOffAllSwitches()
 }
