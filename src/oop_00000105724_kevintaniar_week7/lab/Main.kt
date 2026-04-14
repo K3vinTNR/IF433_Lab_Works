@@ -26,4 +26,15 @@ fun main() {
 
     val (userName, userAge) = data1
     println("Destructured: $userName berumur $userAge")
+
+    println("\n=== TEST SEALED CLASS ===")
+    val response: ApiResponse = Success("Data berhasil ditarik!")
+
+    // Ini akan ERROR karena tidak exhaustive
+    /*
+    val uiMessage = when (response) {
+        is Success -> "Tampilkan: ${response.data}"
+        is Error -> "Munculkan alert: ${response.message}"
+    }
+    */
 }
