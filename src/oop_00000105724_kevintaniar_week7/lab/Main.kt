@@ -49,4 +49,8 @@ fun main() {
     println("\n=== RPG SIMULATION ===")
     GameManager.startGame()
     GameManager.startGame() // Test Singleton
+
+    println("Drop chance LEGENDARY: ${ItemRarity.LEGENDARY.dropChance}%")
+    val starterWeapon = Weapon.forgeStarterSword()
+    println("Senjata Awal: ${starterWeapon.item.name}, Damage: ${starterWeapon.item.damage}")
 }
