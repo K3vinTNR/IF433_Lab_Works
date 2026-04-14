@@ -37,4 +37,11 @@ fun main() {
         is Error -> "Munculkan alert: ${response.message}"
     }
     */
+
+    val uiMessage = when (response) {
+        is Success -> "Tampilkan: ${response.data}"
+        is Error -> "Munculkan alert: ${response.message}"
+        is Loading -> "Tampilkan Spinner"
+    }
+    println(uiMessage)
 }
