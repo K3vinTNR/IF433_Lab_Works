@@ -4,7 +4,7 @@ fun main() {
     println("=== TEST LIST ===")
     // Immutable List: Tidak bisa diubah setelah dibuat
     val frameworks: List<String> = listOf("Kotlin", "Java", "C++")
-    // frameworks.add("Python") // Error jika tidak dikomentari [cite: 18]
+    // frameworks.add("Python")
     println("Immutable List: $frameworks")
 
     // Mutable List: Bisa ditambah/dikurangi
@@ -15,23 +15,23 @@ fun main() {
 
     println("\n=== TEST SET ===")
     val uniqueNumbers = setOf(1, 2, 2, 3, 3, 4)
-    println("Unique Numbers (Set): $uniqueNumbers") // Output: [1, 2, 3, 4] [cite: 32]
+    println("Unique Numbers (Set): $uniqueNumbers")
 
     val activeUsers = mutableSetOf("UserA", "UserB")
     activeUsers.add("UserC")
-    activeUsers.add("UserA") // Diabaikan karena sudah ada [cite: 35]
+    activeUsers.add("UserA")
     println("Active Users: $activeUsers")
 
     println("\n=== TEST MAP ===")
     val studentGrades = mapOf(
         "Alice" to "A",
         "Bob" to "B",
-        "Charlie" to "A" // Value boleh duplikat, Key tidak [cite: 45]
+        "Charlie" to "A"
     )
     println("Nilai Bob: ${studentGrades["Bob"]}")
 
     val inventory = mutableMapOf("Apples" to 50, "Bananas" to 30)
-    inventory["Oranges"] = 20 // Menambah data [cite: 48]
-    inventory["Apples"] = 45  // Mengupdate data [cite: 49]
+    inventory["Oranges"] = 20
+    inventory["Apples"] = 45
     println("Inventory: $inventory")
 }
