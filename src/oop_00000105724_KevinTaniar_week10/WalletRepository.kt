@@ -5,4 +5,8 @@ class WalletRepository<T> {
 
     fun add(item: T) { items.add(item) }
     fun getAll(): List<T> { return items }
+    // Contoh implementasi pencarian sederhana dengan constraint Any [cite: 116, 117]
+    fun find(predicate: (T) -> Boolean): T? {
+        return items.find(predicate)
+    }
 }
