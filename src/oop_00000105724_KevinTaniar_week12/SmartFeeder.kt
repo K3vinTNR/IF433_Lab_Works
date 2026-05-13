@@ -8,3 +8,5 @@ fun dispenseKibble(requestedGram: Int, availableGram: Int, isJammed: Boolean): I
     println("Kibble berhasil dikeluarkan!")
     return availableGram - requestedGram
 }
+fun main() {
+    var currentKibbleStock = 50
