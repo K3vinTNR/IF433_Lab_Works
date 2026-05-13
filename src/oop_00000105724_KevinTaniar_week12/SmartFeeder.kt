@@ -22,4 +22,9 @@ fun main() {
     } finally {
         println("Siklus pengecekan dispenser pagi selesai.")
     }
+
+    println("\n--- Jadwal Makan Sore ---")
+    val feederResult = runCatching {
+        dispenseKibble(30, 1000, false)
+    }
 }
