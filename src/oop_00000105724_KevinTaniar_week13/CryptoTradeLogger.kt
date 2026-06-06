@@ -12,4 +12,8 @@ fun main() {
     val tradeFile = File("trades.csv")
     tradeFile.writeText(initialTrades.toCsvFormat())
     println("Data transaksi awal berhasil disimpan ke trades.csv.")
+
+    // Menambahkan baris rusak secara sengaja (format PnL bukan angka/Double yang valid)
+    tradeFile.appendText("TX104,DOGE,BUY,ERROR_VAL\n")
+    println("Anomalous trade record appended.")
 }
