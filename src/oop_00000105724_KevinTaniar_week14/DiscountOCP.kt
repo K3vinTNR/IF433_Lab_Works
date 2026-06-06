@@ -23,3 +23,12 @@ class VipPolicy : DiscountPolicy {
 class VvipPolicy : DiscountPolicy {
     override fun extractDiscount(price: Double): Double = price * 0.75
 }
+class OrderPriceEvaluator(private val policy: DiscountPolicy) {
+    fun finalCost(price: Double): Double = policy.extractDiscount(price)
+}
+
+fun main() {
+    println("\n=== TEST OCP PIPELINE ===")
+    val vvipEvaluator = OrderPriceEvaluator(VvipPolicy())
+    println("Harga akhir VVIP: Rp${vvipEvaluator.finalCost(100000.0)}")
+}
