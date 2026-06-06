@@ -9,4 +9,7 @@ fun main() {
         CryptoTrade("TX102", "ETH", "SELL", -45.20),
         CryptoTrade("TX103", "SOL", "BUY", 320.00)
     )
+    val tradeFile = File("trades.csv")
+    tradeFile.writeText(initialTrades.toCsvFormat())
+    println("Data transaksi awal berhasil disimpan ke trades.csv.")
 }
