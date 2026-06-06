@@ -12,3 +12,20 @@ fun List<Student>.toCsvString(): String {
     }
     return sb.toString()
 }
+
+fun parseCsvToStudents(csvLines: List<String>): List<Student> {
+    val students = mutableListOf<Student>()
+    // Lewati baris pertama karena merupakan header tabel
+    for (i in 1 until csvLines.size) {
+        val line = csvLines[i]
+        if (line.isBlank()) continue
+        val tokens = line.split(",")
+        if (tokens.size == 3) {
+            val nim = tokens[0].trim()
+            val name = tokens[1].trim()
+            val gpa = tokens[2].trim().toDouble()
+            students.add(Student(nim, name, gpa))
+        }
+    }
+    return students
+}
