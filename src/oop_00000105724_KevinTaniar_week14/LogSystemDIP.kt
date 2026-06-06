@@ -13,3 +13,9 @@ class InvertedLogProcessor(private val storage: LogStorage) { // Dependency Inje
         storage.insertLog(message)
     }
 }
+fun main() {
+    println("\n=== TEST DIP LOOSE COUPLING ===")
+    val cloudDb = MongoDbStorage()
+    val logger = InvertedLogProcessor(cloudDb)
+    logger.process("System initialization complete.")
+}
