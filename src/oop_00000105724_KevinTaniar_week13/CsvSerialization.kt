@@ -29,3 +29,22 @@ fun parseCsvToStudents(csvLines: List<String>): List<Student> {
     }
     return students
 }
+
+fun main() {
+    println("=== TEST CSV SERIALIZATION ===")
+    val originalStudents = listOf(
+        Student("001", "Alice", 3.92),
+        Student("002", "Bob", 3.51)
+    )
+
+    val csvFile = File("students.csv")
+    csvFile.writeText(originalStudents.toCsvString())
+
+    println("\n=== TEST CSV DESERIALIZATION ===")
+    val readLines = csvFile.readLines()
+    val parsedStudents = parseCsvToStudents(readLines)
+
+    parsedStudents.forEach {
+        println("Student -> NIM: ${it.nim}, Nama: ${it.name}, IPK: ${it.gpa}")
+    }
+}
