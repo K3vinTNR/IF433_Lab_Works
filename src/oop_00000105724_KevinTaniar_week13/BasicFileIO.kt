@@ -16,4 +16,3 @@ fun main() {
     val content = file.readText()
     println("Isi File:\n$content")
 }
-}
