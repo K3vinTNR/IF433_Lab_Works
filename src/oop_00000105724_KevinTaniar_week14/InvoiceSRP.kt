@@ -15,3 +15,14 @@ class NotificationSender {
         println("Notification email sent to $email via SRP.")
     }
 }
+
+fun main() {
+    println("=== TEST SRP ARCHITECTURE ===")
+    val calc = FinancialCalculator()
+    val repo = InvoiceRepository()
+    val notifier = NotificationSender()
+
+    val total = calc.calculateTotal(500000.0, 0.11)
+    repo.saveToFile("INV-2026-001", total)
+    notifier.sendEmail("kevin.taniar@student.umn.ac.id")
+}
