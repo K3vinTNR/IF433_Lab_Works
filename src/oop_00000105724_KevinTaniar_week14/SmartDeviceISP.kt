@@ -4,3 +4,10 @@ interface SmartDeviceOperations {
     fun recordVideo()
     fun adjustTemperature()
 }
+interface CameraDevice {
+    fun recordVideo()
+}
+
+interface ThermostatDevice {
+    fun adjustTemperature()
+}
