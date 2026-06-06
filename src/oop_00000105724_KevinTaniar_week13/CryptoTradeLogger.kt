@@ -19,6 +19,7 @@ fun main() {
 
     println("\n=== LOADING TRADES VIA BUFFERED PIPELINE ===")
     val loadedData = loadTradesFromCsv(tradeFile)
+    val totalPnl = loadedData.sumOf { it.pnl }
 }
 fun loadTradesFromCsv(file: File): List<CryptoTrade> {
     val trades = mutableListOf<CryptoTrade>()
