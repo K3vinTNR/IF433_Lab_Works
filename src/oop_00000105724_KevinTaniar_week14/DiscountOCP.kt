@@ -9,3 +9,14 @@ class DiscountManager {
         }
     }
 }
+interface DiscountPolicy {
+    fun extractDiscount(price: Double): Double
+}
+
+class RegularPolicy : DiscountPolicy {
+    override fun extractDiscount(price: Double): Double = price * 0.95
+}
+
+class VipPolicy : DiscountPolicy {
+    override fun extractDiscount(price: Double): Double = price * 0.85
+}
