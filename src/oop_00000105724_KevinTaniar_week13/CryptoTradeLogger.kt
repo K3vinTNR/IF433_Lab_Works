@@ -28,7 +28,7 @@ fun main() {
     println("=========================================")
     println("==== TOTAL PnL BERSIH: $$totalPnl ====")
     println("=========================================")
-}
+
 }
 fun loadTradesFromCsv(file: File): List<CryptoTrade> {
     val trades = mutableListOf<CryptoTrade>()
@@ -55,3 +55,5 @@ fun loadTradesFromCsv(file: File): List<CryptoTrade> {
     }
     return trades
 }
+
+//show warning without crash
