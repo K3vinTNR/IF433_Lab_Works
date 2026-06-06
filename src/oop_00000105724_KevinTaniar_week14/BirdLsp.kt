@@ -15,3 +15,9 @@ class Eagle : BaseBird(), FlyingBird {
 class Penguin : BaseBird() {
     override fun eat() { println("Penguin catching fish.") }
 }
+
+fun main() {
+    println("\n=== TEST LSP COMPLIANCE ===")
+    val birds: List<BaseBird> = listOf(Eagle(), Penguin())
+    birds.forEach { it.eat() }
+}
