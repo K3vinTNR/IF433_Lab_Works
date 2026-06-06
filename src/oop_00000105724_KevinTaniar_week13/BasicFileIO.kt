@@ -11,4 +11,9 @@ fun main() {
     println("\n=== TEST APPEND FILE ===")
     file.appendText("This line is appended later.\n")
     println("Teks berhasil ditambahkan!")
+
+    println("\n=== TEST READ FILE ===")
+    val content = file.readText()
+    println("Isi File:\n$content")
+}
 }
