@@ -16,6 +16,9 @@ fun main() {
     // Menambahkan baris rusak secara sengaja (format PnL bukan angka/Double yang valid)
     tradeFile.appendText("TX104,DOGE,BUY,ERROR_VAL\n")
     println("Anomalous trade record appended.")
+
+    println("\n=== LOADING TRADES VIA BUFFERED PIPELINE ===")
+    val loadedData = loadTradesFromCsv(tradeFile)
 }
 fun loadTradesFromCsv(file: File): List<CryptoTrade> {
     val trades = mutableListOf<CryptoTrade>()
