@@ -20,3 +20,6 @@ class RegularPolicy : DiscountPolicy {
 class VipPolicy : DiscountPolicy {
     override fun extractDiscount(price: Double): Double = price * 0.85
 }
+class VvipPolicy : DiscountPolicy {
+    override fun extractDiscount(price: Double): Double = price * 0.75
+}
