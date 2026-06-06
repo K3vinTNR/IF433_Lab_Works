@@ -40,3 +40,31 @@ class SafeOrderProcessor(
         notifier.sendNotification("Order $orderId has been processed with final total of $$finalPrice.")
     }
 }
+// --- 4. OCP Abstractions & Pricing Strategies ---
+interface PricingStrategy {
+    fun calculate(price: Double): Double
+}
+
+class RegularPricing : PricingStrategy {
+    override fun calculate(price: Double): Double = price
+}
+
+class VipPricing : PricingStrategy {
+    override fun calculate(price: Double): Double = price * 0.90 // Diskon 10%
+}
+
+// --- 5. Main Execution Pipeline ---
+fun main() {
+    println("\n=== TESTING SOLID CRYPTO ORDER BOT ===")
+
+    val repository = CsvOrderRepository()
+    val notification = EmailNotifier()
+    val vipStrategy = VipPricing()
+
+    // Membangun arsitektur bot yang tangguh dengan injeksi dependensi
+    val botProcessor = SafeOrderProcessor(repository, notification, vipStrategy)
+
+    // Menjalankan pipeline eksekusi
+    botProcessor.processOrder("TX-SOLID-99", 5000.0)
+    println("=========================================")
+}
