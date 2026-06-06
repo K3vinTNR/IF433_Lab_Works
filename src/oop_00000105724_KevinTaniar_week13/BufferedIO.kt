@@ -1,6 +1,7 @@
 package oop_00000105724_KevinTaniar_week13
 
 import java.io.File
+import kotlin.io.println
 
 fun main() {
     println("=== TEST BUFFERED WRITER ===")
@@ -12,3 +13,11 @@ fun main() {
         writer.write("Line 2: Handled efficiently with internal buffer.\n")
     }
     println("Penulisan buffered selesai!")
+    println("\n=== TEST BUFFERED READER ===")
+    bufferedFile.bufferedReader().use { reader ->
+        var line: String?
+        while (reader.readLine().also { line = it } != null) {
+            println("Membaca baris: $line")
+        }
+    }
+}
