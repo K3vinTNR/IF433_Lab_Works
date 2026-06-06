@@ -20,6 +20,15 @@ fun main() {
     println("\n=== LOADING TRADES VIA BUFFERED PIPELINE ===")
     val loadedData = loadTradesFromCsv(tradeFile)
     val totalPnl = loadedData.sumOf { it.pnl }
+
+    println("\n=== CRYPTO TRADING DASHBOARD ===")
+    loadedData.forEach { trade ->
+        println("Trade ID: ${trade.id} | Asset: ${trade.asset} | Type: ${trade.type} | PnL: $${trade.pnl}")
+    }
+    println("=========================================")
+    println("==== TOTAL PnL BERSIH: $$totalPnl ====")
+    println("=========================================")
+}
 }
 fun loadTradesFromCsv(file: File): List<CryptoTrade> {
     val trades = mutableListOf<CryptoTrade>()
