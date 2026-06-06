@@ -18,3 +18,11 @@ class HikVisionCamera : CameraDevice {
 class NestThermostat : ThermostatDevice {
     override fun adjustTemperature() { println("Setting room temperature to 24°C.") }
 }
+
+fun main() {
+    println("\n=== TEST ISP COUPLING ===")
+    val camera = HikVisionCamera()
+    val thermostat = NestThermostat()
+    camera.recordVideo()
+    thermostat.adjustTemperature()
+}
