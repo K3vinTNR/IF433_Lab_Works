@@ -11,3 +11,10 @@ interface CameraDevice {
 interface ThermostatDevice {
     fun adjustTemperature()
 }
+class HikVisionCamera : CameraDevice {
+    override fun recordVideo() { println("Recording 1080p security footage.") }
+}
+
+class NestThermostat : ThermostatDevice {
+    override fun adjustTemperature() { println("Setting room temperature to 24°C.") }
+}
