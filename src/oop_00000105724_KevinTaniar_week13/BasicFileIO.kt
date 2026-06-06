@@ -7,4 +7,8 @@ fun main() {
     val file = File("sample.txt")
     file.writeText("Hello, this is a basic text file written using Kotlin extension functions.\n")
     println("File berhasil ditulis!")
+
+    println("\n=== TEST APPEND FILE ===")
+    file.appendText("This line is appended later.\n")
+    println("Teks berhasil ditambahkan!")
 }
