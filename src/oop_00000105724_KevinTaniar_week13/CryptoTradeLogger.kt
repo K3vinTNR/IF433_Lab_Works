@@ -57,3 +57,4 @@ fun loadTradesFromCsv(file: File): List<CryptoTrade> {
 }
 
 //show warning without crash
+// ok
